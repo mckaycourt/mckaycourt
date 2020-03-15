@@ -4,25 +4,29 @@ import hero from '../images/hero.jpg';
 import mckay1 from '../images/mckay1.png';
 import mckay2 from '../images/mckay2.png';
 import mckay3 from '../images/mckay3.png';
+import MyMenu from "./Menu";
 
 export default class HomePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            width: 0
+            width: 0,
+            go: false,
         }
     }
 
     componentDidMount() {
         let width = window.innerWidth;
+        let go = true;
         this.setState({
-            width
+            width, go
         })
     }
 
     render() {
         return (
             <div>
+                <MyMenu user={this.props.user}/>
                 <Paper style={{
                     position: 'relative',
                     color: 'white',
@@ -34,19 +38,25 @@ export default class HomePage extends Component {
                     height: '300px'
                 }}>
                     <Grid container alignItems="center"
-                          style={{backgroundColor: 'rgba(130,130,130,0.5)', height: '300px'}}>
+                          style={{backgroundColor: 'rgba(105,105,105,0.5)', height: '300px'}}>
                         <Grid item xs={12}>
-                            <Typography component={'h4'} variant={'h4'} style={{marginLeft: '15%'}}>
+                            <Typography component={'h4'} variant={'h4'} style={{
+                                marginLeft: '15%',
+                                textShadow: '1px 1px 2px #000'
+                            }}>
                                 McKay's Site
+                            </Typography>
+                            <Typography style={{marginLeft: '15%', fontSize: 'medium', textShadow: '1px 1px 2px #000'}}>
+                                A Site About Nothing
                             </Typography>
                         </Grid>
                     </Grid>
                 </Paper>
                 <Paper>
                     <Grid container justify={'center'} spacing={2} style={{maxWidth: '100%'}}>
-                        <Grid item style={{minWidth: '400px'}}>
+                        <Grid item style={{width: '400px'}}>
                             <div>
-                                <Zoom direction={'up'} in={true} style={{transitionDelay: '300ms'}}>
+                                <Zoom direction={'up'} in={this.state.go} style={{transitionDelay: '300ms'}}>
                                     <Card>
                                         <CardHeader title={'This is title 1'} subheader={'this is the subheader'}/>
                                         <div style={{textAlign: 'center'}}>
@@ -59,9 +69,9 @@ export default class HomePage extends Component {
                                 </Zoom>
                             </div>
                         </Grid>
-                        <Grid item style={{minWidth: '400px'}}>
+                        <Grid item style={{width: '400px'}}>
                             <div>
-                                <Zoom direction={'up'} in={true} style={{transitionDelay: '600ms'}}>
+                                <Zoom direction={'up'} in={this.state.go} style={{transitionDelay: '600ms'}}>
                                     <Card>
                                         <CardHeader title={'This is title 2'} subheader={'this is the subheader'}
                                                     style={{background: 'none'}}/>
@@ -75,9 +85,9 @@ export default class HomePage extends Component {
                                 </Zoom>
                             </div>
                         </Grid>
-                        <Grid item style={{minWidth: '400px'}}>
+                        <Grid item style={{width: '400px'}}>
                             <div>
-                                <Zoom direction={'up'} in={true} style={{transitionDelay: '900ms'}}>
+                                <Zoom direction={'up'} in={this.state.go} style={{transitionDelay: '900ms'}}>
                                     <Card>
                                         <CardHeader title={'This is title 3'} subheader={'this is the subheader'}/>
                                         <div style={{textAlign: 'center'}}>

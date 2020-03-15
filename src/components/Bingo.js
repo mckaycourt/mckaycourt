@@ -9,6 +9,7 @@ import {
     GridListTileBar,
     CardActionArea
 } from "@material-ui/core";
+import MyMenu from "./Menu";
 
 export default class Bingo extends Component {
     constructor(props) {
@@ -97,6 +98,7 @@ export default class Bingo extends Component {
 
         return (
             <div>
+                <MyMenu user={this.props.user}/>
                 <Grid container justify={'center'}>
                     {
                         this.state.options.map((row, key) => (
