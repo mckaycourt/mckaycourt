@@ -14,7 +14,7 @@ export default class Movies extends Component {
                 {
                     title: 'The Dark Knight',
                     img: batman,
-                    quote: '"If you\'re good at something never do it for free"',
+                    quote: '"If you\'re good at something never do it for free."',
                     director: 'Christopher Nolan',
                     stars: ['Christian Bale', 'yada yada yada'],
                     rating: ''
@@ -38,7 +38,7 @@ export default class Movies extends Component {
                 {
                     title: 'Coco',
                     img: coco,
-                    quote: '"Never name a street dog"',
+                    quote: '“Never underestimate the power of music.”',
                     director: 'Lee Unkrich',
                     stars: ['Anthony Gonzalez', 'Gael García Bernal', 'Benjamin Bratt'],
                     rating: ''
