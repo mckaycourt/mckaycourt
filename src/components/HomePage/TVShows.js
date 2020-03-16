@@ -53,7 +53,7 @@ export default class TVShows extends Component {
 
     render() {
         return (
-            <Paper style={{marginTop: '85px', backgroundColor: '#f5f5f5'}}>
+            <Paper style={{marginTop: '85px', backgroundColor: '#f5f5f5', overflow: 'hidden'}}>
                 <div style={{padding: '25px'}}>
                     <Typography component={'h5'} variant={'h5'}>Favorite TV Shows</Typography>
                 </div>
