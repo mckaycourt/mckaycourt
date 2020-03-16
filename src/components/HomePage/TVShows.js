@@ -14,6 +14,7 @@ export default class TVShows extends Component {
             tvShows: [
                 {
                     title: 'Parks and Recreation',
+                    quote: '"Damn it I love this country so much."',
                     img: parks,
                     director: 'Greg Daniels, Michael Schur',
                     stars: ['Amy Poehler', 'Jim O\'Heir', 'Nick Offerman'],
@@ -21,6 +22,7 @@ export default class TVShows extends Component {
                 },
                 {
                     title: 'The Office',
+                    quote: '“I\'m not superstitious, but I am a little stitious.”',
                     img: office,
                     director: 'Greg Daniels',
                     stars: ['Steve Carell', 'Jenna Fischer', 'John Krasinski'],
@@ -28,6 +30,7 @@ export default class TVShows extends Component {
                 },
                 {
                     title: 'Seinfeld',
+                    quote: '"But are you still master of your domain?"',
                     img: seinfeld,
                     director: 'Larry David',
                     stars: ['Jerry Seinfeld', 'Julia Louis-Dreyfus', 'Michael Richards'],
@@ -35,6 +38,7 @@ export default class TVShows extends Component {
                 },
                 {
                     title: '30 Rock',
+                    quote: '"You still think Reagan is President? You lucky Bastard."',
                     img: rock,
                     director: 'Tina Fey',
                     stars: ['Tina Fey', 'Alec Baldwin', 'Tracy Morgan'],
@@ -42,6 +46,7 @@ export default class TVShows extends Component {
                 },
                 {
                     title: 'Avatar: The Last Airbender',
+                    quote: '"Life happens wherever you are, whether you make it or not."',
                     img: avatar,
                     director: 'Michael Dante DiMartino',
                     stars: ['Dee Bradley Baker', 'Zach Tyler', 'Jack De Sena'],
@@ -53,7 +58,7 @@ export default class TVShows extends Component {
 
     render() {
         return (
-            <Paper style={{marginTop: '85px', backgroundColor: '#f5f5f5', overflow: 'hidden'}}>
+            <Paper style={{margin: '25px', padding: '25px', backgroundColor: '#f5f5f5', overflow: 'hidden'}}>
                 <div style={{padding: '25px'}}>
                     <Typography component={'h5'} variant={'h5'}>Favorite TV Shows</Typography>
                 </div>

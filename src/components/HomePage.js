@@ -56,7 +56,7 @@ export default class HomePage extends Component {
                         </Grid>
                     </Grid>
                 </Paper>
-                <Paper style={{backgroundColor: '#f5f5f5'}}>
+                <Paper style={{backgroundColor: '#f5f5f5', margin: '25px', padding: '25px',}}>
                     <Grid container justify={'center'} spacing={2} style={{maxWidth: '100%'}}>
                         <Grid item style={{width: '400px'}}>
                             <div>

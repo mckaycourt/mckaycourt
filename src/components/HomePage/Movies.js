@@ -14,12 +14,14 @@ export default class Movies extends Component {
                 {
                     title: 'The Dark Knight',
                     img: batman,
+                    quote: '"If you\'re good at something never do it for free"',
                     director: 'Christopher Nolan',
                     stars: ['Christian Bale', 'yada yada yada'],
                     rating: ''
                 },
                 {
                     title: 'The Return of the King',
+                    quote: '"I can’t carry it for you. But I can carry you!"',
                     img: rotk,
                     director: 'Peter Jackson',
                     stars: ['Elijah Wood', 'yada yada yada'],
@@ -27,6 +29,7 @@ export default class Movies extends Component {
                 },
                 {
                     title: 'Empire Strikes Back',
+                    quote: '"I love you... I know..."',
                     img: empireStrikesBack,
                     director: 'George Lucas',
                     stars: ['Mark Hamill', 'Carrie Fisher', 'Harrison Ford'],
@@ -35,6 +38,7 @@ export default class Movies extends Component {
                 {
                     title: 'Coco',
                     img: coco,
+                    quote: '"Never name a street dog"',
                     director: 'Lee Unkrich',
                     stars: ['Anthony Gonzalez', 'Gael García Bernal', 'Benjamin Bratt'],
                     rating: ''
@@ -45,7 +49,7 @@ export default class Movies extends Component {
 
     render() {
         return (
-            <Paper style={{marginTop: '50px', backgroundColor: '#f5f5f5', overflow: 'hidden'}}>
+            <Paper style={{margin: '25px', padding: '25px', backgroundColor: '#f5f5f5', overflow: 'hidden'}}>
                 <div style={{padding: '25px'}}>
                     <Typography component={'h5'} variant={'h5'}>Favorite Movies</Typography>
                 </div>
