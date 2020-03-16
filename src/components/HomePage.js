@@ -4,7 +4,11 @@ import hero from '../images/hero.jpg';
 import mckay1 from '../images/mckay1.png';
 import mckay2 from '../images/mckay2.png';
 import mckay3 from '../images/mckay3.png';
+import batman from '../images/batman.jpg';
+import rotk from '../images/rotk.jpg';
 import MyMenu from "./Menu";
+import Movies from "./HomePage/Movies";
+import TVShows from "./HomePage/TVShows";
 
 export default class HomePage extends Component {
     constructor(props) {
@@ -52,19 +56,19 @@ export default class HomePage extends Component {
                         </Grid>
                     </Grid>
                 </Paper>
-                <Paper>
+                <Paper style={{backgroundColor: '#f5f5f5'}}>
                     <Grid container justify={'center'} spacing={2} style={{maxWidth: '100%'}}>
                         <Grid item style={{width: '400px'}}>
                             <div>
                                 <Zoom direction={'up'} in={this.state.go} style={{transitionDelay: '300ms'}}>
                                     <Card>
-                                        <CardHeader title={'This is title 1'} subheader={'this is the subheader'}/>
+                                        <CardHeader title={'Hell'}/>
                                         <div style={{textAlign: 'center'}}>
                                             <img src={mckay2} style={{height: '200px'}}/>
                                         </div>
-                                        <CardContent>
-                                            Here is the main content
-                                        </CardContent>
+                                        {/*<CardContent>*/}
+                                        {/*    Here is the main content*/}
+                                        {/*</CardContent>*/}
                                     </Card>
                                 </Zoom>
                             </div>
@@ -73,14 +77,14 @@ export default class HomePage extends Component {
                             <div>
                                 <Zoom direction={'up'} in={this.state.go} style={{transitionDelay: '600ms'}}>
                                     <Card>
-                                        <CardHeader title={'This is title 2'} subheader={'this is the subheader'}
+                                        <CardHeader title={'o'}
                                                     style={{background: 'none'}}/>
                                         <div style={{textAlign: 'center'}}>
                                             <img src={mckay1} style={{height: '200px'}}/>
                                         </div>
-                                        <CardContent>
-                                            Here is the main content
-                                        </CardContent>
+                                        {/*<CardContent>*/}
+                                        {/*    Here is the main content*/}
+                                        {/*</CardContent>*/}
                                     </Card>
                                 </Zoom>
                             </div>
@@ -89,19 +93,21 @@ export default class HomePage extends Component {
                             <div>
                                 <Zoom direction={'up'} in={this.state.go} style={{transitionDelay: '900ms'}}>
                                     <Card>
-                                        <CardHeader title={'This is title 3'} subheader={'this is the subheader'}/>
+                                        <CardHeader title={'World'}/>
                                         <div style={{textAlign: 'center'}}>
                                             <img src={mckay3} style={{height: '200px'}}/>
                                         </div>
-                                        <CardContent>
-                                            Here is the main content
-                                        </CardContent>
+                                        {/*<CardContent>*/}
+                                        {/*    Here is the main content*/}
+                                        {/*</CardContent>*/}
                                     </Card>
                                 </Zoom>
                             </div>
                         </Grid>
                     </Grid>
                 </Paper>
+                <Movies/>
+                <TVShows/>
             </div>
         )
     }
