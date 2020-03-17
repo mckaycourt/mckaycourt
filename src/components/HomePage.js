@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
-import {Grid, Card, CardHeader, CardMedia, Paper, Typography, Slide, Grow, Zoom, CardContent} from "@material-ui/core";
+import {Grid, Card, CardHeader, Paper, Typography, Zoom} from "@material-ui/core";
 import hero from '../images/hero.jpg';
 import mckay1 from '../images/mckay1.png';
 import mckay2 from '../images/mckay2.png';
 import mckay3 from '../images/mckay3.png';
-import batman from '../images/batman.jpg';
-import rotk from '../images/rotk.jpg';
 import MyMenu from "./Menu";
 import Movies from "./HomePage/Movies";
 import TVShows from "./HomePage/TVShows";
@@ -64,7 +62,7 @@ export default class HomePage extends Component {
                                     <Card>
                                         <CardHeader title={'Hell'}/>
                                         <div style={{textAlign: 'center'}}>
-                                            <img src={mckay2} style={{height: '200px'}}/>
+                                            <img src={mckay1} style={{height: '200px'}}/>
                                         </div>
                                         {/*<CardContent>*/}
                                         {/*    Here is the main content*/}
@@ -80,7 +78,7 @@ export default class HomePage extends Component {
                                         <CardHeader title={'o'}
                                                     style={{background: 'none'}}/>
                                         <div style={{textAlign: 'center'}}>
-                                            <img src={mckay1} style={{height: '200px'}}/>
+                                            <img src={mckay3} style={{height: '200px'}}/>
                                         </div>
                                         {/*<CardContent>*/}
                                         {/*    Here is the main content*/}
@@ -95,7 +93,7 @@ export default class HomePage extends Component {
                                     <Card>
                                         <CardHeader title={'World'}/>
                                         <div style={{textAlign: 'center'}}>
-                                            <img src={mckay3} style={{height: '200px'}}/>
+                                            <img src={mckay2} style={{height: '200px'}}/>
                                         </div>
                                         {/*<CardContent>*/}
                                         {/*    Here is the main content*/}
@@ -106,8 +104,8 @@ export default class HomePage extends Component {
                         </Grid>
                     </Grid>
                 </Paper>
-                <Movies/>
-                <TVShows/>
+                <Movies user={this.props.user}/>
+                <TVShows user={this.props.user}/>
             </div>
         )
     }

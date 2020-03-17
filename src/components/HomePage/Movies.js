@@ -1,57 +1,55 @@
 import React, {Component} from 'react';
-import {Card, CardContent, CardHeader, Grid, Paper, Typography} from "@material-ui/core";
-import batman from "../../images/batman.jpg";
-import rotk from "../../images/rotk.jpg";
-import empireStrikesBack from '../../images/empireStrikesBack.jpg';
-import coco from '../../images/coco.jpg';
+import {Grid, Paper, Typography} from "@material-ui/core";
 import OffsetCard from "./OffsetCard";
+import {db, storage} from '../../firebase/fire';
+import Button from "@material-ui/core/Button";
 
 export default class Movies extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            movies: [
-                {
-                    title: 'The Dark Knight',
-                    img: batman,
-                    quote: '"If you\'re good at something never do it for free."',
-                    director: 'Christopher Nolan',
-                    stars: ['Christian Bale', 'yada yada yada'],
-                    rating: ''
-                },
-                {
-                    title: 'The Return of the King',
-                    quote: '"I can’t carry it for you. But I can carry you!"',
-                    img: rotk,
-                    director: 'Peter Jackson',
-                    stars: ['Elijah Wood', 'yada yada yada'],
-                    rating: ''
-                },
-                {
-                    title: 'Empire Strikes Back',
-                    quote: '"I love you... I know..."',
-                    img: empireStrikesBack,
-                    director: 'George Lucas',
-                    stars: ['Mark Hamill', 'Carrie Fisher', 'Harrison Ford'],
-                    rating: ''
-                },
-                {
-                    title: 'Coco',
-                    img: coco,
-                    quote: '“Never underestimate the power of music.”',
-                    director: 'Lee Unkrich',
-                    stars: ['Anthony Gonzalez', 'Gael García Bernal', 'Benjamin Bratt'],
-                    rating: ''
-                },
-            ]
+            movies: []
         }
     }
+
+    componentDidMount() {
+        db.collection('movies').get()
+            .then(async querySnapshot => {
+                let movies = [];
+                querySnapshot.forEach(row => {
+                    movies.push(row.data());
+                });
+                for (let movie of movies) {
+                    movie.image = await storage.ref(movie.img).getDownloadURL();
+                }
+                this.setState({
+                    movies
+                })
+            })
+            .catch(err => {
+                console.error(err.message);
+            })
+    }
+
+    addMovie = () => {
+        db.collection('movies').doc().set({})
+            .then(r => {
+                console.log(r);
+            })
+            .catch(err => {
+                console.error(err.message);
+            })
+    };
 
     render() {
         return (
             <Paper style={{margin: '25px', padding: '25px', backgroundColor: '#f5f5f5', overflow: 'hidden'}}>
                 <div style={{padding: '25px'}}>
                     <Typography component={'h5'} variant={'h5'}>Favorite Movies</Typography>
+                    {
+                        this.props.user && this.props.user.uid === 'qIR2ikYVBmUoJ4eAziDJf2Suq113' &&
+                        <Button onClick={this.addMovie}>Add Movie</Button>
+                    }
                 </div>
                 <Grid container spacing={10} justify={'center'}>
                     {

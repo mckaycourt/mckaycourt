@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardContent, CardHeader, Grid} from "@material-ui/core";
+import {Card, Grid} from "@material-ui/core";
 
 const OffsetCard = props => {
     return (
@@ -22,7 +22,7 @@ const OffsetCard = props => {
                     }}>
                         {props.quote}
                     </div>
-                    <img src={props.img}
+                    <img src={props.image}
                          style={{
                              height: '400px', borderRadius: '4px',
                              // boxShadow: '-10px 5px #888888'
